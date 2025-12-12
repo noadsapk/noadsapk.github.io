@@ -29,7 +29,7 @@ async function loadAppList() {
                 name: row.Name || 'N/A',
                 developer: row.Developer || 'N/A',
                 version: row.Version || 'N/A',
-                icon: `apk_icons/${row.Name}.jpg`,
+                icon: `../app/${row.Name}/icon.jpg`,
             };
 
             const listItem = document.createElement('li');
