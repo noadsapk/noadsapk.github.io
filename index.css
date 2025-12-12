@@ -1,0 +1,79 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f4f4f9, #e8e8f0);
+    color: #333;
+}
+
+.home-container {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.home-title {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.app-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.app-list-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.app-list-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.app-list-item h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+.app-list-item p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.app-list-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.app-list-item a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
