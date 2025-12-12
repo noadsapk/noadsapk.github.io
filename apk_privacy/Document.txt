@@ -1,9 +1,0 @@
-Privacy Policy
-
-This application respects your privacy. We are committed to protecting your personal information.
-
-1. Data Collection: We do not collect any personal data or transmit it to external servers.
-2. File Access: The app requires storage permission solely to list, read, and manage PDF and TXT files stored on your device.
-3. Third-party Services: This app does not use any third-party services that track user activity.
-
-By using this app, you agree to this policy.
