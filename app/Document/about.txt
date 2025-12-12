@@ -1,0 +1,17 @@
+Document v1.0
+
+This application provides a comprehensive interface for managing and viewing documents on your device.
+
+Supported File Extensions:
+- .pdf
+- .txt
+- .doc, .docx
+- .ppt, .pptx
+
+Features:
+- Scan device for folders containing documents
+- View PDF and TXT files
+- Manage files (Rename, Delete)
+- Navigate through documents
+
+Created by Nikhil
