@@ -1,0 +1,52 @@
+PRIVACY POLICY FOR FRUIT CRUSH
+
+Last Updated: December 14, 2025
+
+1. INTRODUCTION
+This Privacy Policy applies to the "Fruit Crush" app (the "App") created by [Your Developer Name/Company Name]. We respect your privacy and are committed to protecting it through our compliance with this policy. This App is designed for Android devices and is distributed via the Google Play Store.
+
+2. INFORMATION WE COLLECT AND HOW WE USE IT
+The App generally functions as a standalone game. However, to ensure the App runs smoothly on your Android device, we may interact with the following data types:
+
+A. Device Information
+We may collect information about your mobile device, including the hardware model, operating system version (e.g., Android 13), and unique device identifiers (Advertising ID). This helps us fix crashes and optimize the game's performance for your specific screen size and specifications.
+
+B. Gameplay Data
+We store your game progress locally on your device. This includes:
+- Current level achieved
+- High scores
+- In-game currency or item inventory
+If you uninstall the App, this locally stored data may be lost unless backed up by a third-party service (see Section 3).
+
+3. THIRD-PARTY SERVICES AND LIBRARIES
+The App is built using the Gradle build system and relies on third-party software development kits (SDKs) and libraries repositories (Google, Maven Central) to function. These services may collect data to provide their features:
+
+- Google Play Services:
+  We use Google Play Services to offer features such as leaderboards, achievements, or cloud saves. Google's privacy policy is available at: https://policies.google.com/privacy
+
+- Ad Networks (If Applicable):
+  If the App displays advertisements (e.g., via AdMob or Unity Ads), these networks may collect your Advertising ID to serve personalized ads based on your interests.
+
+- Crash Reporting (e.g., Firebase Crashlytics):
+  We may use tools to collect logs when the App crashes. This data helps us identify bugs within the app module code and fix them in future updates.
+
+4. PERMISSIONS
+The App may request specific permissions on your Android device to function correctly. You can manage these permissions at any time in your device settings. Common requests may include:
+- Network Access: Required to load ads or sync with Google Play Services.
+- Storage: Required to save game progress files.
+
+5. CHILDREN'S PRIVACY
+Our App is not intended for children under the age of 13 without parental consent. We do not knowingly collect personal information from children under 13. If we learn we have collected or received personal information from a child under 13 without verification of parental consent, we will delete that information.
+
+6. DATA RETENTION
+We retain gameplay data for as long as you use the App. We do not store personal data on external servers unless you sign in via a third-party service (like Google Play Games), in which case their retention policies apply.
+
+7. YOUR RIGHTS (GDPR/CCPA)
+Depending on your location, you may have the right to request access to or deletion of your data. Since most of our data is stored locally on your device, you can clear this data by uninstalling the App or clearing the App's storage in your Android settings.
+
+8. CHANGES TO OUR PRIVACY POLICY
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+
+9. CONTACT INFORMATION
+To ask questions or comment about this privacy policy and our privacy practices, contact us at:
+Email: [Insert Your Support Email Here]
