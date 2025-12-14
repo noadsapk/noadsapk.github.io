@@ -1,57 +1,48 @@
-// Dynamically load apps into the list
-async function loadAppList() {
+document.addEventListener('DOMContentLoaded', async () => {
     const appList = document.getElementById('app-list');
     appList.innerHTML = "<p>Loading apps...</p>";
 
     try {
-        const filePath = './noadsapk.xlsx';
-        const response = await fetch(filePath);
+        const sheetId = '1WVOnGXZAC5-nGzvmYQAgnyL_LiDYXP2PExRsF9uVZ34';
+        const response = await fetch(`https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`);
 
         if (!response.ok) {
-            throw new Error(`Failed to load the Excel file. HTTP status: ${response.status}`);
+            throw new Error(`Failed to load the Google Sheet. HTTP status: ${response.status}`);
         }
 
-        const data = await response.arrayBuffer();
-        const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-
-        appList.innerHTML = ''; // Clear loading message
+        const csvData = await response.text();
+        const sheetData = XLSX.utils.sheet_to_json(XLSX.read(csvData, { type: 'string' }).Sheets[XLSX.read(csvData, { type: 'string' }).SheetNames[0]]);
 
         if (sheetData.length === 0) {
-            appList.innerHTML = "<p>No apps found in the Excel file.</p>";
+            appList.innerHTML = "<p>No apps found in the list.</p>";
             return;
         }
 
-        sheetData.forEach((row) => {
-            const app = {
-                id: row.Id || 'N/A',
-                name: row.Name || 'N/A',
-                developer: row.Developer || 'N/A',
-                version: row.Version || 'N/A',
-                icon: `../app/${row.Name}/icon.jpg`,
-            };
-
-            const listItem = document.createElement('li');
-            listItem.className = 'app-list-item';
-            listItem.innerHTML = `
+        const appItemsHTML = sheetData.map(row => {
+            const name = row.Name || 'N/A';
+            const version = row.Version || 'N/A';
+            const developer = row.Developer || 'N/A';
+            const icon = `app/${name}/icon.jpg`;
+            const defaultIcon = 'https://via.placeholder.com/100/e0e0e0/808080?text=No+Icon';
+            
+            return `
+            <li class="app-list-item">
                 <div style="display: flex; align-items: center;">
-                    <img src="${app.icon}" alt="${app.name} Icon" onerror="this.onerror=null;this.src='default_icon.jpg';">
+                    <img src="${icon}" alt="${name} Icon" onerror="this.onerror=null;this.src='${defaultIcon}';">
                     <div>
-                        <h3>${app.name}</h3>
-                        <p><strong>Version:</strong> ${app.version}</p>
-                        <p><strong>Developer:</strong> ${app.developer}</p>
+                        <h3>${name}</h3>
+                        <p><strong>Version:</strong> ${version}</p>
+                        <p><strong>Developer:</strong> ${developer}</p>
                     </div>
                 </div>
-                <a href="apk.html?app=${encodeURIComponent(app.name)}">View Details</a>
-            `;
+                <a href="apk.html?app=${encodeURIComponent(name)}">View Details</a>
+            </li>`;
+        }).join('');
 
-            appList.appendChild(listItem);
-        });
+        appList.innerHTML = appItemsHTML;
+
     } catch (error) {
         console.error("Error loading apps:", error);
-        appList.innerHTML = `<p>Error loading apps. Please check the console for details.</p>`;
+        appList.innerHTML = `<p>Error loading app list. Please try refreshing the page.</p>`;
     }
-}
-
-loadAppList();
+});
