@@ -220,27 +220,6 @@
             text-decoration: underline;
         }
 
-        /* Description */
-        .app-description {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: linear-gradient(to right, #f8f9ff, #ffffff);
-            border-radius: 12px;
-            border: 1px solid #e6e9ff;
-        }
-
-        .app-description h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .app-description p {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
         /* No Content Message */
         .no-content-message {
             text-align: center;
@@ -494,15 +473,18 @@
             appContainer.innerHTML = '';
 
             try {
-                // Load Excel data
-                const response = await fetch('./noadsapk.xlsx');
+                // Google Sheet URL for CSV export
+                const sheetId = '1WVOnGXZAC5-nGzvmYQAgnyL_LiDYXP2PExRsF9uVZ34';
+                const filePath = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
+
+                const response = await fetch(filePath);
                 
                 if (!response.ok) {
-                    throw new Error(`Failed to load app data. HTTP status: ${response.status}`);
+                    throw new Error(`Failed to load app data from Google Sheet. HTTP status: ${response.status}`);
                 }
 
-                const data = await response.arrayBuffer();
-                const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
+                const csvData = await response.text();
+                const workbook = XLSX.read(csvData, { type: 'string' });
                 const sheetName = workbook.SheetNames[0];
                 const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
@@ -519,8 +501,7 @@
                     name: appData.Name || 'N/A',
                     developer: appData.Developer || 'N/A',
                     version: appData.Version || 'N/A',
-                    downloadLink: appData.Download || '#',
-                    description: appData.Description || 'No description available.'
+                    downloadLink: appData.Download || '#'
                 };
 
                 // Load additional content files
@@ -606,11 +587,6 @@
                         </div>
                     </div>
                     
-                    <div class="app-description">
-                        <h3>Description</h3>
-                        <p>${app.description}</p>
-                    </div>
-                    
                     ${aboutContent ? `
                     <div class="content-section">
                         <h3>About This App</h3>
@@ -630,7 +606,7 @@
                     
                     <div class="app-footer">
                         <a href="index.html" class="back-to-list-btn">← Back to All Apps</a>
-                        <p class="last-updated">Data loaded from local Excel file</p>
+                        <p class="last-updated">Data loaded from Google Sheet</p>
                     </div>
                 </div>
             `;
@@ -663,7 +639,7 @@
                     <div class="error-tips">
                         <h4>Troubleshooting Tips:</h4>
                         <ul>
-                            <li>Make sure the Excel file "noadsapk.xlsx" exists in the project folder</li>
+                            <li>Check your internet connection to access the Google Sheet.</li>
                             <li>Check if the app folder exists in the "app/" directory</li>
                             <li>Verify the app name in the URL is correct</li>
                             <li>Run the site on a local server (not file:// protocol)</li>
