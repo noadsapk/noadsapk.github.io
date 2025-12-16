@@ -1,6 +1,6 @@
 {
-  "versionCode": 1,
-  "versionName": "0.1",
-  "url": "https://github.com/nikhil-photo/Photo/releases/download/v0.1/app-release.apk",
+  "versionCode": 3,
+  "versionName": "0.3",
+  "url": "https://github.com/noadsapk/Photo/releases/download/0.3/app-release.apk",
   "releaseNotes": "Initial update implementation."
 }
