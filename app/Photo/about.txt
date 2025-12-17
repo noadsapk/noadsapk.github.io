@@ -1,0 +1,16 @@
+Photo v1.0
+
+About App:
+Photo is a simple and efficient gallery application designed to help you organize and view your photos.
+
+Features:
+• View photos by Folder or by Tags.
+• Swipe between Folder and Tag views.
+• View photos in fullscreen with zoom support.
+• Edit photo metadata (rename, tags).
+• Organize photos (move, delete, create folders).
+• Check for updates directly from the app.
+
+Developed by: Nikhil
+
+Thank you for using Photo!

@@ -1,0 +1,22 @@
+Privacy Policy & Terms
+
+Permissions We Request
+• Read/Write External Storage (or Photos and Videos on newer Android versions): This permission is strictly used to display your photos within the app, organize them into folders, and allow you to rename, move, delete, or tag them. We cannot function as a gallery app without accessing your media.
+
+Data Storage & Internet
+• No Cloud Storage: We do NOT store your photos, videos, or tags on any external server. All your data remains locally on your device.
+• No Tracking: We do not track your usage, location, or personal identity.
+• Internet Access: The app may request internet access solely to check for app updates (via GitHub or our update mechanism) to ensure you have the latest features and bug fixes. No personal data is transmitted.
+
+Tags & Metadata
+When you add 'Tags' to a photo, we modify the EXIF metadata of the image file itself (specifically the ImageDescription tag). This ensures your tags stay with your photo even if you copy it to another device. However, this means modifying the file on your storage.
+
+Open Source Libraries
+We believe in transparency. This app is built using open-source technologies:
+• Glide (Bumptech): For efficient image loading and caching.
+• PhotoView (Chris Banes): For zooming and viewing images.
+• Material Components: For modern UI design.
+• Android Jetpack (androidx): For core Android functionality.
+
+Contact Us
+If you have any questions about this privacy policy, please contact the developer.
